@@ -9,7 +9,7 @@ public class DBConnector {
 	private static String user = "root";
 	private static String password = "";
 	
-	public Connection getConnetion() {
+	public Connection getConnection() {
 		Connection con = null;
 		
 		try {
