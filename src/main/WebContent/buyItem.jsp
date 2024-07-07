@@ -112,7 +112,8 @@
         </table>
         </s:form>
         <div>
-          <p>前画面に戻る場合は<a href='<s:url action="MyPageAction"/>'>こちら</a>
+          <p>前画面に戻る場合は<a href='<s:url action="GoHomeAction"/>'>こちら</a>
+          <p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a>
           </p>
         </div>
     </div>
