@@ -1,4 +1,4 @@
-package com.diworksdev.ecsite.acton;
+package com.diworksdev.ecsite.action;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -30,7 +30,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("id", buyItemDTO.getId());
 			session.put("buyItem_name", buyItemDTO.getItemName());
 			session.put("buyItem_price", buyItemDTO.getItemPrice());
-			return result;
+			
 		}
 		return result;
 	}

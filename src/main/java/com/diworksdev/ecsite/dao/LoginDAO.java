@@ -18,12 +18,19 @@ public class LoginDAO {
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			
 			preparedStatement.setString(1,loginUserId);
-			preparedStatement.setString(2, loginPassword);
+			preparedStatement.setString(2,loginPassword);
 			
 			ResultSet resultSet = preparedStatement.executeQuery();
 			
-			if(resultSet.getString("login_id")!=null) {
-				loginDTO.setLoginFlg(true);
+			//LoginDTOSQLのユーザーログイン情報をセット　テーブルに該当するidがあればtrueを返す
+			if(resultSet.next()) {
+				loginDTO.setLoginId(resultSet.getString("login_id"));
+				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
+				loginDTO.setUserName(resultSet.getString("user_name"));
+				
+				if(resultSet.getString("login_id")!=null) {
+					loginDTO.setLoginFlg(true);
+				}
 			}
 		}catch(Exception e) {
 			e.printStackTrace();
