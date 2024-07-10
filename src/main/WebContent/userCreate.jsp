@@ -71,7 +71,7 @@
         </s:if>
         
         <table>
-          <s:form action="userCreateConfirmAction">
+          <s:form action="UserCreateConfirmAction">
             <tr>
               <td>
                 <label>ログインID:</label>
