@@ -18,21 +18,28 @@
         <result name="success">home.jsp</result>
       </action>
       
-      <!-- LoginAction -->
       <action name="LoginAction" class="com.diworksdev.ecsite.action.LoginAction" method="execute">
         <result name="success">buyItem.jsp</result>
         <result name="error">login.jsp</result>
       </action>
 	  
-	  <!-- UserCreateAction -->
 	  <action name="UserCreateAction" class="com.diworksdev.ecsite.action.UserCreateAction" method="execute">
 	   <result name="success">userCreate.jsp</result>
 	  </action>
 	
-	  <!-- UserCreateConfirmAction -->
 	  <action name="UserCreateConfirmAction" class="com.diworksdev.ecsite.action.UserCreateConfirmAction" method="execute">
 	    <result name="success">userCreateConfirm.jsp</result>
 	    <result name="error">userCreate.jsp</result>
+	  </action>
+	  
+	  <action name="UserCreateCompleteAction" class="com.diworksdev.ecsite.action.UserCreateCompleteAction" method="execute">
+	    <result name="success">userCreateComplete.jsp</result>
+	  </action>
+	  
+	  <action name="BuyItemAction" class="com.diworksdev.ecsite.action.BuyItemAction" method="execute">
+	    <result name="success">buyItemConfirm.jsp</result>
+	    <result name="error">buyItem.jsp</result>
+	    
 	  </action>
     </package>
 </struts>
