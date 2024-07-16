@@ -24,6 +24,7 @@ public class BuyItemCompleteDAO {
 					+ "total_price,"
 					+ "total_count,"
 					+ "user_master_id,"
+					+ "pay,"
 					+ "insert_date)"
 					+ "VALUES(?,?,?,?,?,?)";
 		

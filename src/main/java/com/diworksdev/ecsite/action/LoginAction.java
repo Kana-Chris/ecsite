@@ -20,6 +20,8 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public String execute() {
 		String result = ERROR;
 		loginDTO = loginDAO.getLoginUserInfo(loginUserId,loginPassword);
+		
+		//LoginDAOのsql →　　String sql "SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
 		session.put("loginUser",loginDTO);
 		
 		//ログイン情報できたら（loginFlgがtrueなら)セッションにlogin_user_id,id,biyItem_name,buyItem_priceを保存
