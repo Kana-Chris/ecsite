@@ -23,14 +23,16 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 			return ERROR;
 		}
 		
+		//myPage.jspで”削除”を送信してなければ購入履歴の情報を取得
 		if(deleteFlg == null) {
 			String item_transaction_id = session.get("id").toString();
 			String user_master_id=session.get("login_user_id").toString();
 			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id,user_master_id);	
-			//MyPageDTO型のList 購入履歴の情報を取得
+			
 			
 		}else if(deleteFlg.equals("1")){
 			delete();	
+			
 		}
 		
 		String result = SUCCESS;
@@ -43,10 +45,11 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 		String user_master_id = session.get("login_user_id").toString();
 		
 		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id,user_master_id);
-		
+	
 		if(res>0) {
 			myPageList = null;
 			setMessage("商品情報を正しく削除しました。");
+			
 		}else if(res==0) {
 			setMessage("商品情報の削除に失敗しました。");
 		}

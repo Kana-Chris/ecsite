@@ -12,6 +12,8 @@ public class BuyItemAction extends ActionSupport implements SessionAware{
 	private String pay;
 	
 	public String execute() {
+		//buyItem.jspでsubmitされた情報をsessionに入れる　料金計算しておく
+		//→buyItemConfirm
 		
 		String result = SUCCESS;
 		session.put("count",count);
